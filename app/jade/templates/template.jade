@@ -1,0 +1,34 @@
+//- mixins
+//- include ../includes/boxTitle
+//- include ../includes/marker
+//- include ../includes/timer
+include ../includes/cube
+include ../includes/menu
+//- include ../includes/slide3
+//- include ../includes/slide4
+//- include ../includes/slide5
+//- include ../includes/slide6
+//-
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(content='', name='keywords')
+    meta(content='', name='description')
+    meta(content='width=device-width, initial-scale=1, maximum-scale=1', name='viewport')
+    meta(content='#fff', name='msapplication-TileColor')
+    meta(content='#fff', name='theme-color')
+    block title
+    link(href='css/main.css', rel='stylesheet')
+  body
+    include ../partials/header
+    block content
+    include ../partials/footer
+    //- Vendor JS
+    script(src="lib/skrollr.min.js")
+    script(src="https://code.jquery.com/jquery-2.2.4.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js")
+
+    //- Main Js
+    script(src="js/all.js")
+

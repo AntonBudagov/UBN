@@ -1,0 +1,35 @@
+.header
+  background-color: #223
+  height: rem-calc(100)
+  width: 100%
+  display: flex
+  align-content: flex-start
+  align-items: center
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.13)
+  padding: 0 32px
+  +breakpoint(medium)
+    height: rem-calc(50)
+
+
+#logo
+  margin-left: 31px
+  color: #fff
+  text-decoration: none
+  font-family: Roboto;
+  font-size: rem-calc(40)
+  font-weight: 500
+  line-height: 48px
+
+.user
+  position: relative
+  .status
+    width: 24px
+    height: 24px
+    border-radius: 50%
+    position: absolute
+    background-color: grey
+    top: 12px
+    left: 34px
+    border: 2px solid white
+    &.active
+      background-color: red
