@@ -1,9 +1,17 @@
 define ['extra'], (extra)->
   console.log "Thiss Main and: #{extra}"
-  s = skrollr.init()
+  # s = skrollr.init()
+
+  # Carusel
+
+  $('#sliderBestMaterials').slick
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    centerMode: true
 
   'use strict'
-
+  # Menu
   do ->
     bodyEl = document.body
     content = document.querySelector('.content-wrap')

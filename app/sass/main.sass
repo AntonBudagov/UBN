@@ -40,11 +40,25 @@ body
 p
   font-size: rem-calc(28)
   line-height: rem-calc(40)
+  padding-top: rem-calc(20)
+  &:first-child
+    margin-top: 0
 
 h1
   font-size: rem-calc(60)
   line-height: rem-calc(64)
   font-weight: 700
+h4
+  font-size: rem-calc(40)
+  font-weight: 500
+  line-height: rem-calc(36)
+
+img
+  max-width: 100%
+  height: auto
+  -ms-interpolation-mode: bicubic
+  display: inline-block
+  vertical-align: middle
 
 .content-wrapp
   padding: 0 30px
@@ -54,7 +68,13 @@ h1
   align-items: center
   width: 100%
 
+.brendText
+  font-family: $brendFont
+
 @import _menu
 @import partials/_header
 @import partials/_footer
 @import home
+
+@import post
+@import slider
