@@ -9,6 +9,8 @@ define ['extra'], (extra)->
     slidesToScroll: 1,
     dots: true,
     centerMode: true
+    centerPadding: '160px'
+    arrows: false
 
   'use strict'
   # Menu
