@@ -1,5 +1,5 @@
 .post
-  margin: rem-cacl(57px 0 38px)
+  margin: rem-calc(57 0 38)
   &:first-child
     margin: rem-calc(43px 0 39px)
   &:last-child
@@ -10,6 +10,8 @@
     padding-bottom: rem-calc(49)
   .avatar
     justify-content: center
+    border-radius: 50%
+    overflow: hidden
   .title
     margin-top: rem-calc(30)
     text-align: center
@@ -21,8 +23,6 @@
     font-weight: 300
     line-height: rem-calc(38)
 
-  .postContent
-    //
   .brendText
     font-size: rem-calc(30)
     font-weight: 400
@@ -130,3 +130,57 @@
     margin-top: rem-calc(66)
     margin-bottom: 0
     border: none
+
++breakpoint(medium)
+  .posts
+    padding: 0 140px 0 219px
+    background-color: #fff
+    margin: 0
+    .post
+      &:first-child,
+      &:last-child
+        margin: 0
+    .avatar
+      margin-right: 20px
+      width: 60px
+      height: 60px
+      img
+        max-width: 100%
+    .postColor
+      background-color: #fff
+      padding: 0px 0 43px
+  .headPost
+    display: flex
+    align-items: center
+    .title
+      text-align: left
+    .name
+      font-size: 28px
+      font-weight: 500
+      line-height: 30px
+    .subtitle
+      color: #000
+      margin: 8px 0 14px
+      font-size: 24px
+      font-weight: 400
+      line-height: 30px
+
+  .brendText
+    padding-left: 80px
+    font-size: 18px
+    font-weight: 400
+    line-height: 26px
+
+// Reviews
++breakpoint(medium)
+  .reviews
+    .reviews-wrapp
+      padding: 0 29px 0 84px
+
+
+
+
+
+
+
+

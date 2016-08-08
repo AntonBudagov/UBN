@@ -41,7 +41,7 @@ gulp.task 'sass',  ->
 gulp.task 'build', ['coffee'], ->
   rjs
     baseUrl: 'js'
-    name: '../bower_components/almond/almond'
+    name: '../app/bower_components/almond/almond'
     include: ['main']
     insertRequire: ['main']
     out: 'all.js'

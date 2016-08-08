@@ -31,13 +31,14 @@ body
   max-width: 100%
   overflow-y: auto
   overflow-x: hidden
-  background-color: #eeeeee
+  background-color: red//#eeeeee
+
 p
   font-size: rem-calc(28)
   line-height: rem-calc(40)
   padding-top: rem-calc(20)
   &:first-child
-    margin-top: 0
+    padding-top: 0
 
 h1
   font-size: rem-calc(60)
@@ -66,8 +67,10 @@ img
   font-family: $brendFont
 
 .content
-  width: 980px
+  max-width: 980px
+  width: 100%
   margin: 0 auto
+  background-color: #fff
 
 +breakpoint(medium)
   p
@@ -89,5 +92,5 @@ img
 
 
 @import _icons
-@import post
+@import _post
 @import slider

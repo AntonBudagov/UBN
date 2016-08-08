@@ -5,7 +5,7 @@
   background-repeat: no-repeat
   background-position: center top
   p
-    margin-top: 0
+    padding-top: 0
 
   .decription
     padding-top: rem-calc(376)
@@ -32,19 +32,56 @@
     display: inline-block
     margin: 0 14px
 
-.social
+#share
   position: absolute
   right: rem-calc(24)
-
+  +breakpoint
+    display: none
+.socialButton
+  margin-top: 37px
+  .social
+    position: relative
+    display: none
+    color: white
+    font-size: 14px
+    font-weight: 500
+    line-height: 24px
+    right: 0
+    a
+      display: flex
+      color: #fff
+      text-decoration: none
+      align-items: center
+      padding: 0 12px 0 11px
+      height: 33px
+    svg
+      width: 14px
+      height: auto
+    .followers
+      opacity: .8
 +breakpoint(medium)
   .wrappPhoto
+    background-position: center 30%
+    .content-wrapp
+      display: flex
+      align-content: flex-end
+      align-items: flex-end
+      height: 550px
     .decription
-      padding-left: 140px
-      h1
-        width: 440px
+      // padding-left: 140px
+      width: 585px
+      padding: 0 0 0 140px
+      .info
+        margin: 21px 0 20px
     .userInfo
       font-size: 14px
-    .userView
+      margin-right: 22px
+    .userView,
+    .userComment
+      display: flex
+      align-items: center
+      .icon-bnp
+        margin: 0 6px 0 0
       svg
         width: 17px
         height: 9px
@@ -55,6 +92,24 @@
       svg
         width: 17px
         height: 15px
-        opacity: .7
-      span
-        font-size: 14px
+  .afterPhotoWrapp
+    background-color: #fff
+    padding-top: 46px
+  .socialButton
+    .social
+      display: flex
+      &:nth-child(1)
+        background-color: #00b7ec
+        span
+          padding: 0 14px 0 8px
+      &:nth-child(2)
+        background-color: #425497
+        span
+          padding: 0 13px 0 9px
+      &:nth-child(3)
+        background-color: #526e8f
+        span
+          padding: 0 11px 0 9px
+
+
+
