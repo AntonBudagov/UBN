@@ -2,6 +2,33 @@ define ['extra'], (extra)->
   console.log "Thiss Main and: #{extra}"
   # s = skrollr.init()
 
+  # Share
+  $('.share').on 'click', (ev) ->
+      $(this).parent().toggleClass('active')
+
+
+  # Like
+
+
+  # do ->
+
+  #   if windowScreen <= 640
+  #     smallLogo
+  #     console.log "small"
+  #   else
+  #     mediumLogo
+
+  $(window).resize ->
+    mediumLogo = $('#logo').text("BestNewsMedia")
+    smallLogo = $('#logo').text("BNM")
+    windowScreen = $( window ).width()
+    console.log windowScreen
+    if windowScreen < 640
+      $('#logo').text("BNM")
+      console.log "small"
+    if windowScreen > 700
+      $('#logo').text("BestNewsMedia")
+      console.log "large"
   # Carusel
 
   $('#sliderBestMaterials').slick

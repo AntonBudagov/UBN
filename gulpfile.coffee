@@ -30,7 +30,7 @@ gulp.task 'jade', ->
 
 # SASS #############################################
 gulp.task 'sass',  ->
-  gulp.src('app/sass/*.sass')
+  gulp.src('app/sass/**/*.sass')
     .pipe sass(outputStyle: 'compressed').on 'error', notify.onError()
     # .pipe sass
     #.pipe concatCss("sass/bundle.css")
@@ -41,7 +41,7 @@ gulp.task 'sass',  ->
 gulp.task 'build', ['coffee'], ->
   rjs
     baseUrl: 'js'
-    name: '../app/bower_components/almond/almond'
+    name: '../bower_components/almond/almond'
     include: ['main']
     insertRequire: ['main']
     out: 'all.js'

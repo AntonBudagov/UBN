@@ -1,0 +1,75 @@
+mixin reviews
+  .reviews
+    .content-wrapp
+      .reviewContent
+        .headReview.flexBlock
+          .userInfo.flexBlock
+            .avatar
+              img(src="/images/upload/109687_original.png", alt="Сергей Иванов")
+            .name Сергей Иванов
+            .time 3 ч назад
+          .like.positive 10
+        .text
+          | Доказательство стремительно уравновешивает тригонометрический интеграл от функции,
+          | имеющий конечный разрыв. Не доказано, что связное множество однородно ускоряет изоморфный предел функции.
+          | Следствие: интегрирование по частям позитивно отражает Наибольший Общий Делитель
+          | (НОД). Поле направлений, конечно, позиционирует изоморфный интеграл от функции.
+          .reply Ответить
+        .reviewContent
+          .headReview.flexBlock
+            .userInfo.flexBlock
+              .avatar
+                img(src="/images/upload/827687_original.jpg", alt="Леша Н.")
+              .name Леша Н.
+              .time 7 ч назад
+            .like 0
+          .text Система координат, в первом приближении, привлекает минимум.
+            a.reply Ответить
+        .reviewContent
+          .poclog
+            i.icon-bnp
+              svg(viewBox="0 0 24 18" width="46" height="37")
+                use(xlink:href="/images/icons/sprite.svg#icon-reply")
+            span poclog
+          .headReview.flexBlock
+            .userInfo.flexBlock
+              .avatar
+                img(src="/images/upload/716645_original.jpg", alt="Леша Н.")
+              .name Леша Н.
+              .time 7 ч назад
+            .like.negative -5
+          .text
+            | Сумма ряда, общеизвестно, естественно отражает убывающий лист Мёбиуса, что несомненно приведет нас к истине.
+            | Стоит отметить, что тройной интеграл стремительно притягивает экспериментальный предел функции.
+            | Скалярное поле поразительно. Расходящийся ряд естественно уравновешивает анормальный детерминант. Доказательство, как следует из вышесказанного, усиливает аксиоматичный лист Мёбиуса.
+            | Достаточное условие сходимости, как следует из вышесказанного, охватывает абсолютно сходящийся ряд. Функция многих переменных стремится к нулю. Легко проверить, что интеграл.
+            .reply Ответить
+      .reviewContent
+        .headReview.flexBlock
+          .userInfo.flexBlock
+            .avatar
+              img(src="/images/upload/585401_original.jpg", alt="Саша Шукшин")
+            .name Андрей Сергеев
+            .time 3 ч назад
+          .like.positive 8
+        .text
+          | Доказательство стремительно уравновешивает тригонометрический интеграл от функции,
+          | имеющий конечный разрыв. Не доказано, что связное множество однородно ускоряет изоморфный предел функции.
+          | Следствие: интегрирование по частям позитивно отражает Наибольший Общий Делитель
+          | (НОД). Поле направлений, конечно, позиционирует изоморфный интеграл от функции.
+          a.reply Ответить
+    hr
+    form.form(action="")
+      h2 Оставить комментарий
+      textarea#text(name="", cols="30", rows="10")
+      .flexBlock
+        button Отправить
+        .uploadButton
+          i.icon-bnp
+            svg(viewBox="0 0 36 35" width="46" height="37")
+              use(xlink:href="/images/icons/sprite.svg#icon-picture")
+          input#upload_button(type="file" multiple="" name="file1")
+        .uploadVideo
+          i.icon-bnp
+            svg(viewBox="0 0 35 25" width="46" height="37")
+              use(xlink:href="/images/icons/sprite.svg#icon-video")

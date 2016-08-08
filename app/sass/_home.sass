@@ -1,5 +1,4 @@
 .wrappPhoto
-  // padding-bottom: 100%
   width: 100%
   background-image: url(/images/upload/B-Ty0pFIYAEUNgU.jpg)
   background-size: cover
@@ -36,18 +35,26 @@
 .social
   position: absolute
   right: rem-calc(24)
-.share
-  width: rem-calc(90)
-  height: rem-calc(90)
-  border-radius: 50%
-  background-color: #f06
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22)
-  justify-content: center
 
-  svg
-    width: rem-calc(40)
-    height: rem-calc(45)
-
-
-
-
++breakpoint(medium)
+  .wrappPhoto
+    .decription
+      padding-left: 140px
+      h1
+        width: 440px
+    .userInfo
+      font-size: 14px
+    .userView
+      svg
+        width: 17px
+        height: 9px
+        opacity: .7
+      span
+        font-size: 14px
+    .userComment
+      svg
+        width: 17px
+        height: 15px
+        opacity: .7
+      span
+        font-size: 14px

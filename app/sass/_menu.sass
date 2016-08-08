@@ -4,13 +4,18 @@
   transition: transform 0s 0.4s
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1)
   a
-    display: block
-    -webkit-transform: translate3d(0, 500px, 0)
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1)
+    height: rem-calc(101)
+    display: flex
+    align-items: center
     transform: translate3d(0, 500px, 0)
-    -webkit-transition: -webkit-transform 0s 0.4s
     transition: transform 0s 0.4s
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1)
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1)
+    span
+      padding-left: rem-calc(33)
+      font-size: rem-calc(40)
+      font-weight: 300
+      line-height: rem-calc(48)
     &:nth-child(2)
       transform: translate3d(0, 1000px, 0)
     &:nth-child(3)
@@ -21,13 +26,59 @@
       transform: translate3d(0, 2500px, 0)
     &:nth-child(6)
       transform: translate3d(0, 3000px, 0)
-    span
-      margin-left: 10px
-      font-weight: 700
 
+  #search
+    height: 101px
+    width: 100%
+    border: none
+    font-size: rem-calc(40)
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1)
+    padding-left: rem-calc(34)
+    &::-webkit-input-placeholder
+      color: rgba(0, 0, 0, 0.1)
+      font-size: rem-calc(40)
+      font-weight: 300
+      font-family: $defaultFont
+      padding-left: rem-calc(34)
+    &::-moz-placeholder
+      color: rgba(0, 0, 0, 0.1)
+      font-size: rem-calc(40)
+      font-weight: 300
+      font-family: $defaultFont
+      padding-left: rem-calc(34)
+    &:-ms-input-placeholder
+      color: rgba(0, 0, 0, 0.1)
+      font-size: rem-calc(40)
+      font-weight: 300
+      font-family: $defaultFont
+      padding-left: rem-calc(34)
+
+// Menu
+.menu
+  background: #fff
+  // width: calc(100% - 120px)
+  width: 100%
+  height: 100%
+.menu-wrap
+  position: absolute
+  z-index: 1001
+  width: rem-calc(480)
+  height: 100%
+  font-size: rem-calc(40)
+  font-weight: 300
+  transform: translate3d(-480px, 0, 0)
+  transition: transform 0.3s
+.content-wrap
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+  transition: transform 0.3s
+
+.menu-wrap a
+  color: #b8b7ad
+  &:hover, &:focus
+    color: #c94e50
 
 // Shown menu
-
 .show-menu
   .menu-wrap
     transform: translate3d(0, 0, 0)
@@ -51,18 +102,17 @@
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1)
     transform: translate3d(0, 0, 0)
 
-.container
-  background: #fff
-
-.menu-wrap a
-  color: #b8b7ad
-  &:hover, &:focus
-    color: #c94e50
-
-.content-wrap
-  overflow-y: scroll
-  -webkit-overflow-scrolling: touch
-  transition: transform 0.3s
+  .menu-wrap
+    transform: translate3d(0, 0, 0)
+  .content-wrap
+    transition-delay: 0.1s
+    transform: translate3d(100px, 0, 0)
+  .content::before
+    opacity: 1
+    -webkit-transition: opacity 0.3s
+    transition: opacity 0.3s
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
 
 // .content
 //   position: relative
@@ -79,38 +129,6 @@
 //     transition: opacity 0.3s, transform 0s 0.3s
 //     transform: translate3d(100%, 0, 0)
 
-// Menu
-
-.menu-wrap
-  position: absolute
-  z-index: 1001
-  width: rem-calc(480)
-  height: 100%
-  font-size: rem-calc(40)
-  font-weight: 300
-  transform: translate3d(-480px, 0, 0)
-  transition: transform 0.3s
-
-.menu
-  background: #373a47
-  width: calc(100% - 120px)
-  height: 100%
-  padding: 35px 32px
-
-.icon-list
-  width: 280px
-  a
-    display: block
-    padding: 0.8em
-    i
-      opacity: 0.5
-    span
-      margin-left: 10px
-      text-transform: uppercase
-      font-weight: 700
-      letter-spacing: 1px
-      font-size: 0.75em
-
 // Morph Shape
 
 .morph-shape
@@ -121,21 +139,8 @@
   right: 0
   fill: #373a47
   z-index: 1000
-
+  display: none
 // Shown menu
-
-.show-menu
-  .menu-wrap
-    transform: translate3d(0, 0, 0)
-  .content-wrap
-    transition-delay: 0.1s
-    transform: translate3d(100px, 0, 0)
-  .content::before
-    opacity: 1
-    -webkit-transition: opacity 0.3s
-    transition: opacity 0.3s
-    -webkit-transform: translate3d(0, 0, 0)
-    transform: translate3d(0, 0, 0)
 
 // button
 .cd-nav-trigger
@@ -186,3 +191,47 @@
         transform: translateX(4px) translateY(0px) rotate(45deg)
       &::after
         transform: translateX(4px) translateY(0px) rotate(-45deg)
+
++breakpoint(medium)
+  #open-button
+    display: none
+  .menu-wrap
+    position: fixed
+    transform: none
+    z-index: inherit
+    width: 100%
+    left: 140px
+    height: 50px
+  .icon-list
+    transform: none
+    height: 50px
+    display: flex
+    span
+      position: relative
+    #search
+      position: absolute
+      height: 100%
+      border: none
+      border-right: solid 1px rgba(0, 0, 0, 0.1)
+      width: 196px
+      padding: 0
+      margin: 0
+      padding-left: 19px
+      font-size: 16px
+      &::-webkit-input-placeholder
+        font-size: 16px
+        padding-left: 0
+    a
+      transform: none!important
+      height: auto
+      text-decoration: none
+      border: none
+      border-right: solid 1px rgba(0, 0, 0, 0.1)
+      &:first-child
+        border-left: solid 1px rgba(0, 0, 0, 0.1)
+      span
+        padding: 0 22px 0 25px
+        color: black
+        font-size: 16px
+        font-weight: 300
+        line-height: 20px

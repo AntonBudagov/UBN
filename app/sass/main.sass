@@ -31,12 +31,7 @@ body
   max-width: 100%
   overflow-y: auto
   overflow-x: hidden
-
-// html, body, .container, .content-wrap
-//   overflow: hidden
-//   width: 100%
-//   height: 100%
-
+  background-color: #eeeeee
 p
   font-size: rem-calc(28)
   line-height: rem-calc(40)
@@ -70,10 +65,29 @@ img
 .brendText
   font-family: $brendFont
 
+.content
+  width: 980px
+  margin: 0 auto
+
++breakpoint(medium)
+  p
+   font-size: 18px
+   line-height: 26px
+   padding-top: 10px
+  h1
+    font-size: 48px
+    font-weight: 700
+    line-height: 50px
+  .content-wrapp
+    padding: 0
+    max-width: 980px
+
 @import _menu
 @import partials/_header
 @import partials/_footer
-@import home
+@import _home
 
+
+@import _icons
 @import post
 @import slider

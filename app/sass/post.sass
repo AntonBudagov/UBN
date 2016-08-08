@@ -27,3 +27,106 @@
     font-size: rem-calc(30)
     font-weight: 400
     line-height: rem-calc(40)
+
+
+// Reviews
+.reviews
+  font-size: rem-calc(28)
+  .reviewContent
+    padding: rem-calc(32 0 22)
+    .reviewContent
+      padding-left: rem-calc(60)
+  .avatar
+    width: rem-calc(80)
+    height: rem-calc(80)
+    border-radius: 50%
+    overflow: hidden
+
+  .name
+    color: black
+    font-weight: 700
+    margin-right: rem-calc(23)
+    margin-left: rem-calc(22)
+  .time
+    color: #999
+    font-size: rem-calc(20)
+    font-weight: (300)
+  .like
+    color: #bcbcbc
+    font-size: rem-calc(28)
+    font-weight: 700
+    &.positive
+      color: #26bc1b
+    &.negative
+      color: #e44040
+
+  .text
+    padding-left: rem-calc(94)
+    font-weight: 400
+    line-height: 38px
+
+  .poclog
+    color: #a8a8a8
+    padding-left: rem-calc(54)
+    svg
+      width: rem-calc(24)
+      height: rem-calc(18)
+    span
+      padding-left: rem-calc(17)
+      line-height: rem-calc(40)
+
+  .reply
+    margin-top: rem-calc(22)
+    display: table
+    color: #999
+    font-size: 28px
+    font-weight: 400
+    text-decoration: dotted
+    border-bottom: dotted 1px  #868686
+    cursor: pointer
+
+  .form
+    margin: 0 auto
+    padding: rem-calc(30 30)
+    h2
+      color: #999
+      font-weight: 700
+      line-height: 19px
+      margin-bottom: rem-calc(25)
+    textarea
+      width: 100%
+      border: 2px solid #ccc
+      border-radius: 5px 6px 6px 5px
+      margin: rem-calc(25 0 28)
+    button
+      background-color: #13b04b
+      border-radius: 4px 3px 3px 4px
+      color: #fff
+      border: none
+      padding: 0
+      font-size: rem-calc(28)
+      width: rem-calc(186)
+      height: rem-calc(60)
+    .uploadButton
+      position: relative
+      cursor: pointer
+      margin: rem-calc(0 54 0 56)
+      svg
+        width: rem-calc(36)
+        height: rem-calc(35)
+    .uploadVideo
+      svg
+        width: rem-calc(35)
+        height: rem-calc(25)
+    #upload_button
+      position: absolute
+      opacity: 0
+      top: 0
+      width: 50px
+      height: 50px
+  hr
+    height: 1px
+    background-color: #ebebeb
+    margin-top: rem-calc(66)
+    margin-bottom: 0
+    border: none
