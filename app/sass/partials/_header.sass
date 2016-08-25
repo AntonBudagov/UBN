@@ -6,7 +6,15 @@
   align-content: flex-start
   align-items: center
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.13)
-  padding: 0 32px
+  z-index: 1004
+  position: fixed
+  .headerWrapp
+    justify-content: space-between
+  .wrappLogoNav
+    display: flex
+    align-items: center
+
+
 
   .avatar
     overflow: hidden
@@ -15,7 +23,7 @@
     border-radius: 50%
     img
       max-width: 100%
-#logo
+#logo, .logo
   margin-left: 31px
   color: #000
   text-decoration: none
@@ -47,8 +55,10 @@
     position: fixed
     width: 100%
     justify-content: space-between
+
     .flexBlock
-      width: auto
+      width: 100%
+      justify-content: space-between
     .avatar
       height: 24px
       width: 24px
@@ -80,7 +90,7 @@
           position: absolute
           background: linear-gradient(to left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%)
 
-  #logo
+  #logo, .logo
     font-size: rem-calc(18)
     font-weight: 500
     margin-left: 0

@@ -1,6 +1,6 @@
 .wrappPhoto
   width: 100%
-  background-image: url(/images/upload/B-Ty0pFIYAEUNgU.jpg)
+  background-image: url(../images/upload/B-Ty0pFIYAEUNgU.jpg)
   background-size: cover
   background-repeat: no-repeat
   background-position: center top
@@ -35,8 +35,9 @@
 #share
   position: absolute
   right: rem-calc(24)
-  +breakpoint
+  +breakpoint(medium)
     display: none
+
 .socialButton
   margin-top: 37px
   .social
@@ -59,6 +60,7 @@
       height: auto
     .followers
       opacity: .8
+
 +breakpoint(medium)
   .wrappPhoto
     background-position: center 30%
@@ -94,7 +96,7 @@
         height: 15px
   .afterPhotoWrapp
     background-color: #fff
-    padding-top: 46px
+    padding: 46px 219px 0 140px
   .socialButton
     .social
       display: flex

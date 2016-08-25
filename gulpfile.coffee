@@ -46,7 +46,7 @@ gulp.task 'build', ['coffee'], ->
     insertRequire: ['main']
     out: 'all.js'
     wrap: on
-  .pipe do uglify
+  #.pipe do uglify
   .pipe gulp.dest 'dist/js'
 
   gulp.src 'js/', read: no

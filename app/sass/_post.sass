@@ -1,3 +1,5 @@
+.posts
+  padding: 0
 .post
   margin: rem-calc(57 0 38)
   &:first-child
@@ -28,14 +30,24 @@
     font-weight: 400
     line-height: rem-calc(40)
 
+// Reviews----------------------------------------------------------------------
 
-// Reviews
 .reviews
   font-size: rem-calc(28)
+  .reviews-wrapp
+    padding: rem-calc(0 28px 0 30px)
   .reviewContent
     padding: rem-calc(32 0 22)
     .reviewContent
       padding-left: rem-calc(60)
+
+  hr
+    height: 1px
+    background-color: #ebebeb
+    margin-top: rem-calc(66)
+    margin-bottom: 0
+    border: none
+
   .avatar
     width: rem-calc(80)
     height: rem-calc(80)
@@ -47,10 +59,12 @@
     font-weight: 700
     margin-right: rem-calc(23)
     margin-left: rem-calc(22)
+
   .time
     color: #999
     font-size: rem-calc(20)
     font-weight: (300)
+
   .like
     color: #bcbcbc
     font-size: rem-calc(28)
@@ -124,31 +138,26 @@
       top: 0
       width: 50px
       height: 50px
-  hr
-    height: 1px
-    background-color: #ebebeb
-    margin-top: rem-calc(66)
-    margin-bottom: 0
-    border: none
 
 +breakpoint(medium)
   .posts
     padding: 0 140px 0 219px
     background-color: #fff
-    margin: 0
     .post
       &:first-child,
       &:last-child
         margin: 0
+    .postColor
+      background-color: #fff
+      padding: 0px 0 43px
+
     .avatar
       margin-right: 20px
       width: 60px
       height: 60px
       img
         max-width: 100%
-    .postColor
-      background-color: #fff
-      padding: 0px 0 43px
+
   .headPost
     display: flex
     align-items: center
@@ -171,16 +180,8 @@
     font-weight: 400
     line-height: 26px
 
-// Reviews
+// Reviews----------------------------------------------------------------------
 +breakpoint(medium)
   .reviews
     .reviews-wrapp
       padding: 0 29px 0 84px
-
-
-
-
-
-
-
-

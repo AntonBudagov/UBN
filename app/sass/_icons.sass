@@ -5,38 +5,35 @@
   background-color: #f06
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22)
   justify-content: center
-
   svg
     width: rem-calc(40)
     height: rem-calc(45)
 
-.social
-
+.active
   .listSocial
-    transform: translateY(-100%)
-    transition: .2s all
-    opacity: 0
-    visibility: hidden
+    transform: translateY(-137%)
+    opacity: 1
+    visibility: visible
     a
-      cursor: pointer
-      @extend .share
-      margin-bottom: rem-calc(40)
-      transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(0px)
+      transform: scaleY(1) scaleX(1) translateY(0px) translateX(0px)
 
-    .icon-twitter
-      background-color: #00b7ec
-      transition: .6s ease-in
-    .icon-facebook
-      background-color: #425497
-      transition: .4s ease-in
-    .icon-vk
-      background-color: #526e8f
-      transition: .2s ease-in
+.listSocial
+  transform: translateY(-100%)
+  transition: .8s all
+  opacity: 0
+  visibility: hidden
+  a
+    cursor: pointer
+    @extend .share
+    margin-bottom: rem-calc(40)
+    transform: scaleY(0.24) scaleX(0.24) translateY(-10px) translateX(-100px)
 
-  &.active
-    .listSocial
-      transform: translateY(-137%)
-      opacity: 1
-      visibility: visible
-      a
-        transform: scaleY(1) scaleX(1) translateY(0px) translateX(0px)
+  .icon-twitter
+    background-color: #00b7ec
+    transition: .6s ease-in
+  .icon-facebook
+    background-color: #425497
+    transition: .4s ease-in
+  .icon-vk
+    background-color: #526e8f
+    transition: .2s ease-in

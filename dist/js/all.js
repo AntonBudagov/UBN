@@ -1,1 +1,550 @@
-!function(){var e,n,t;!function(r){function i(e,n){return x.call(e,n)}function o(e,n){var t,r,i,o,l,s,c,u,a,f,d,p,g=n&&n.split("/"),m=v.map,h=m&&m["*"]||{};if(e){for(e=e.split("/"),l=e.length-1,v.nodeIdCompat&&M.test(e[l])&&(e[l]=e[l].replace(M,"")),"."===e[0].charAt(0)&&g&&(p=g.slice(0,g.length-1),e=p.concat(e)),a=0;a<e.length;a++)if(d=e[a],"."===d)e.splice(a,1),a-=1;else if(".."===d){if(0===a||1===a&&".."===e[2]||".."===e[a-1])continue;a>0&&(e.splice(a-1,2),a-=2)}e=e.join("/")}if((g||h)&&m){for(t=e.split("/"),a=t.length;a>0;a-=1){if(r=t.slice(0,a).join("/"),g)for(f=g.length;f>0;f-=1)if(i=m[g.slice(0,f).join("/")],i&&(i=i[r])){o=i,s=a;break}if(o)break;!c&&h&&h[r]&&(c=h[r],u=a)}!o&&c&&(o=c,s=u),o&&(t.splice(0,s,o),e=t.join("/"))}return e}function l(e,n){return function(){var t=y.call(arguments,0);return"string"!=typeof t[0]&&1===t.length&&t.push(null),p.apply(r,t.concat([e,n]))}}function s(e){return function(n){return o(n,e)}}function c(e){return function(n){h[e]=n}}function u(e){if(i(w,e)){var n=w[e];delete w[e],$[e]=!0,d.apply(r,n)}if(!i(h,e)&&!i($,e))throw new Error("No "+e);return h[e]}function a(e){var n,t=e?e.indexOf("!"):-1;return t>-1&&(n=e.substring(0,t),e=e.substring(t+1,e.length)),[n,e]}function f(e){return function(){return v&&v.config&&v.config[e]||{}}}var d,p,g,m,h={},w={},v={},$={},x=Object.prototype.hasOwnProperty,y=[].slice,M=/\.js$/;g=function(e,n){var t,r=a(e),i=r[0];return e=r[1],i&&(i=o(i,n),t=u(i)),i?e=t&&t.normalize?t.normalize(e,s(n)):o(e,n):(e=o(e,n),r=a(e),i=r[0],e=r[1],i&&(t=u(i))),{f:i?i+"!"+e:e,n:e,pr:i,p:t}},m={require:function(e){return l(e)},exports:function(e){var n=h[e];return"undefined"!=typeof n?n:h[e]={}},module:function(e){return{id:e,uri:"",exports:h[e],config:f(e)}}},d=function(e,n,t,o){var s,a,f,d,p,v,x=[],y=typeof t;if(o=o||e,"undefined"===y||"function"===y){for(n=!n.length&&t.length?["require","exports","module"]:n,p=0;p<n.length;p+=1)if(d=g(n[p],o),a=d.f,"require"===a)x[p]=m.require(e);else if("exports"===a)x[p]=m.exports(e),v=!0;else if("module"===a)s=x[p]=m.module(e);else if(i(h,a)||i(w,a)||i($,a))x[p]=u(a);else{if(!d.p)throw new Error(e+" missing "+a);d.p.load(d.n,l(o,!0),c(a),{}),x[p]=h[a]}f=t?t.apply(h[e],x):void 0,e&&(s&&s.exports!==r&&s.exports!==h[e]?h[e]=s.exports:f===r&&v||(h[e]=f))}else e&&(h[e]=t)},e=n=p=function(e,n,t,i,o){if("string"==typeof e)return m[e]?m[e](n):u(g(e,n).f);if(!e.splice){if(v=e,v.deps&&p(v.deps,v.callback),!n)return;n.splice?(e=n,n=t,t=null):e=r}return n=n||function(){},"function"==typeof t&&(t=i,i=o),i?d(r,e,n,t):setTimeout(function(){d(r,e,n,t)},4),p},p.config=function(e){return p(e)},e._defined=h,t=function(e,n,t){if("string"!=typeof e)throw new Error("See almond README: incorrect module build, no module name");n.splice||(t=n,n=[]),i(h,e)||i(w,e)||(w[e]=[e,n,t])},t.amd={jQuery:!0}}(),t("../app/bower_components/almond/almond",function(){}),function(){t("extra",[],function(){return"another script"})}.call(this),function(){t("main",["extra"],function(e){var n,t,r,i;return console.log("Thiss Main and: "+e),$(".share").on("click",function(e){return $(this).parent().toggleClass("active")}),t=641,i={slidesToShow:1,slidesToScroll:1,dots:!0,centerMode:!0,centerPadding:"160px",arrows:!1,responsive:[{breakpoint:t}]},r=function(){return $("#sliderBestMaterials").slick(i)},r(),$(window).on("resize",function(){var e;if(e=$(window).width(),e<t)return r()}),n=function(){var e,n;return e=$("#sliderBestMaterials .slide").size(),console.log(e),n=3,$("#sliderBestMaterials .slide:lt("+n+")").show(),$("#loadMore").click(function(){if(n=n+3<=e?n+3:e,$("#sliderBestMaterials .slide:lt("+n+")").show(),n===e)return $(this).parent().hide()})},function(){var e,t,r;return r=$(window).width(),t=$("#logo").text("BNM"),e=$("#logo").text("BestNewsMedia"),r<=640?console.log("small"):($("#sliderBestMaterials").slick("unslick"),n())}(),$(window).resize(function(){var e,t,r;if(e=$("#logo").text("BestNewsMedia"),t=$("#logo").text("BNM"),r=$(window).width(),console.log(r),r<=640&&$("#logo").text("BNM"),r>700)return n(),$("#logo").text("BestNewsMedia"),console.log("large")}),function(){var e,n,t,r,i,o,l,s,c,u,a,f,d,p,g,m;return e=document.body,r=document.querySelector(".content-wrap"),a=document.getElementById("open-button"),t=document.getElementById("close-button"),n=$(".content"),g=$(".cd-nav-trigger"),c=!1,u=document.getElementById("morph-shape"),p=Snap(u.querySelector("svg")),f=p.select("path"),l=f.attr("d"),d=u.getAttribute("data-morph-open"),s=!1,i=function(){return o()},o=function(){return a.addEventListener("click",m),t&&t.addEventListener("click",m),n.on("click",function(e){var n;if(n=e.target,c&&n!==a)return m()})},m=function(){return!s&&(s=!0,c?(a.className="cd-nav-trigger",e.className="",setTimeout(function(){f.attr("d",l),s=!1},300)):(e.className+="show-menu",a.className+=" nav-is-visible",f.animate({path:d},400,mina.easeinout,function(){s=!1})),c=!c)},i()}()})}.call(this),n(["main"])}();
+(function () {
+/**
+ * @license almond 0.3.2 Copyright jQuery Foundation and other contributors.
+ * Released under MIT license, http://github.com/requirejs/almond/LICENSE
+ */
+//Going sloppy to avoid 'use strict' string cost, but strict practices should
+//be followed.
+/*global setTimeout: false */
+
+var requirejs, require, define;
+(function (undef) {
+    var main, req, makeMap, handlers,
+        defined = {},
+        waiting = {},
+        config = {},
+        defining = {},
+        hasOwn = Object.prototype.hasOwnProperty,
+        aps = [].slice,
+        jsSuffixRegExp = /\.js$/;
+
+    function hasProp(obj, prop) {
+        return hasOwn.call(obj, prop);
+    }
+
+    /**
+     * Given a relative module name, like ./something, normalize it to
+     * a real name that can be mapped to a path.
+     * @param {String} name the relative name
+     * @param {String} baseName a real name that the name arg is relative
+     * to.
+     * @returns {String} normalized name
+     */
+    function normalize(name, baseName) {
+        var nameParts, nameSegment, mapValue, foundMap, lastIndex,
+            foundI, foundStarMap, starI, i, j, part, normalizedBaseParts,
+            baseParts = baseName && baseName.split("/"),
+            map = config.map,
+            starMap = (map && map['*']) || {};
+
+        //Adjust any relative paths.
+        if (name) {
+            name = name.split('/');
+            lastIndex = name.length - 1;
+
+            // If wanting node ID compatibility, strip .js from end
+            // of IDs. Have to do this here, and not in nameToUrl
+            // because node allows either .js or non .js to map
+            // to same file.
+            if (config.nodeIdCompat && jsSuffixRegExp.test(name[lastIndex])) {
+                name[lastIndex] = name[lastIndex].replace(jsSuffixRegExp, '');
+            }
+
+            // Starts with a '.' so need the baseName
+            if (name[0].charAt(0) === '.' && baseParts) {
+                //Convert baseName to array, and lop off the last part,
+                //so that . matches that 'directory' and not name of the baseName's
+                //module. For instance, baseName of 'one/two/three', maps to
+                //'one/two/three.js', but we want the directory, 'one/two' for
+                //this normalization.
+                normalizedBaseParts = baseParts.slice(0, baseParts.length - 1);
+                name = normalizedBaseParts.concat(name);
+            }
+
+            //start trimDots
+            for (i = 0; i < name.length; i++) {
+                part = name[i];
+                if (part === '.') {
+                    name.splice(i, 1);
+                    i -= 1;
+                } else if (part === '..') {
+                    // If at the start, or previous value is still ..,
+                    // keep them so that when converted to a path it may
+                    // still work when converted to a path, even though
+                    // as an ID it is less than ideal. In larger point
+                    // releases, may be better to just kick out an error.
+                    if (i === 0 || (i === 1 && name[2] === '..') || name[i - 1] === '..') {
+                        continue;
+                    } else if (i > 0) {
+                        name.splice(i - 1, 2);
+                        i -= 2;
+                    }
+                }
+            }
+            //end trimDots
+
+            name = name.join('/');
+        }
+
+        //Apply map config if available.
+        if ((baseParts || starMap) && map) {
+            nameParts = name.split('/');
+
+            for (i = nameParts.length; i > 0; i -= 1) {
+                nameSegment = nameParts.slice(0, i).join("/");
+
+                if (baseParts) {
+                    //Find the longest baseName segment match in the config.
+                    //So, do joins on the biggest to smallest lengths of baseParts.
+                    for (j = baseParts.length; j > 0; j -= 1) {
+                        mapValue = map[baseParts.slice(0, j).join('/')];
+
+                        //baseName segment has  config, find if it has one for
+                        //this name.
+                        if (mapValue) {
+                            mapValue = mapValue[nameSegment];
+                            if (mapValue) {
+                                //Match, update name to the new value.
+                                foundMap = mapValue;
+                                foundI = i;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                if (foundMap) {
+                    break;
+                }
+
+                //Check for a star map match, but just hold on to it,
+                //if there is a shorter segment match later in a matching
+                //config, then favor over this star map.
+                if (!foundStarMap && starMap && starMap[nameSegment]) {
+                    foundStarMap = starMap[nameSegment];
+                    starI = i;
+                }
+            }
+
+            if (!foundMap && foundStarMap) {
+                foundMap = foundStarMap;
+                foundI = starI;
+            }
+
+            if (foundMap) {
+                nameParts.splice(0, foundI, foundMap);
+                name = nameParts.join('/');
+            }
+        }
+
+        return name;
+    }
+
+    function makeRequire(relName, forceSync) {
+        return function () {
+            //A version of a require function that passes a moduleName
+            //value for items that may need to
+            //look up paths relative to the moduleName
+            var args = aps.call(arguments, 0);
+
+            //If first arg is not require('string'), and there is only
+            //one arg, it is the array form without a callback. Insert
+            //a null so that the following concat is correct.
+            if (typeof args[0] !== 'string' && args.length === 1) {
+                args.push(null);
+            }
+            return req.apply(undef, args.concat([relName, forceSync]));
+        };
+    }
+
+    function makeNormalize(relName) {
+        return function (name) {
+            return normalize(name, relName);
+        };
+    }
+
+    function makeLoad(depName) {
+        return function (value) {
+            defined[depName] = value;
+        };
+    }
+
+    function callDep(name) {
+        if (hasProp(waiting, name)) {
+            var args = waiting[name];
+            delete waiting[name];
+            defining[name] = true;
+            main.apply(undef, args);
+        }
+
+        if (!hasProp(defined, name) && !hasProp(defining, name)) {
+            throw new Error('No ' + name);
+        }
+        return defined[name];
+    }
+
+    //Turns a plugin!resource to [plugin, resource]
+    //with the plugin being undefined if the name
+    //did not have a plugin prefix.
+    function splitPrefix(name) {
+        var prefix,
+            index = name ? name.indexOf('!') : -1;
+        if (index > -1) {
+            prefix = name.substring(0, index);
+            name = name.substring(index + 1, name.length);
+        }
+        return [prefix, name];
+    }
+
+    /**
+     * Makes a name map, normalizing the name, and using a plugin
+     * for normalization if necessary. Grabs a ref to plugin
+     * too, as an optimization.
+     */
+    makeMap = function (name, relName) {
+        var plugin,
+            parts = splitPrefix(name),
+            prefix = parts[0];
+
+        name = parts[1];
+
+        if (prefix) {
+            prefix = normalize(prefix, relName);
+            plugin = callDep(prefix);
+        }
+
+        //Normalize according
+        if (prefix) {
+            if (plugin && plugin.normalize) {
+                name = plugin.normalize(name, makeNormalize(relName));
+            } else {
+                name = normalize(name, relName);
+            }
+        } else {
+            name = normalize(name, relName);
+            parts = splitPrefix(name);
+            prefix = parts[0];
+            name = parts[1];
+            if (prefix) {
+                plugin = callDep(prefix);
+            }
+        }
+
+        //Using ridiculous property names for space reasons
+        return {
+            f: prefix ? prefix + '!' + name : name, //fullName
+            n: name,
+            pr: prefix,
+            p: plugin
+        };
+    };
+
+    function makeConfig(name) {
+        return function () {
+            return (config && config.config && config.config[name]) || {};
+        };
+    }
+
+    handlers = {
+        require: function (name) {
+            return makeRequire(name);
+        },
+        exports: function (name) {
+            var e = defined[name];
+            if (typeof e !== 'undefined') {
+                return e;
+            } else {
+                return (defined[name] = {});
+            }
+        },
+        module: function (name) {
+            return {
+                id: name,
+                uri: '',
+                exports: defined[name],
+                config: makeConfig(name)
+            };
+        }
+    };
+
+    main = function (name, deps, callback, relName) {
+        var cjsModule, depName, ret, map, i,
+            args = [],
+            callbackType = typeof callback,
+            usingExports;
+
+        //Use name if no relName
+        relName = relName || name;
+
+        //Call the callback to define the module, if necessary.
+        if (callbackType === 'undefined' || callbackType === 'function') {
+            //Pull out the defined dependencies and pass the ordered
+            //values to the callback.
+            //Default to [require, exports, module] if no deps
+            deps = !deps.length && callback.length ? ['require', 'exports', 'module'] : deps;
+            for (i = 0; i < deps.length; i += 1) {
+                map = makeMap(deps[i], relName);
+                depName = map.f;
+
+                //Fast path CommonJS standard dependencies.
+                if (depName === "require") {
+                    args[i] = handlers.require(name);
+                } else if (depName === "exports") {
+                    //CommonJS module spec 1.1
+                    args[i] = handlers.exports(name);
+                    usingExports = true;
+                } else if (depName === "module") {
+                    //CommonJS module spec 1.1
+                    cjsModule = args[i] = handlers.module(name);
+                } else if (hasProp(defined, depName) ||
+                           hasProp(waiting, depName) ||
+                           hasProp(defining, depName)) {
+                    args[i] = callDep(depName);
+                } else if (map.p) {
+                    map.p.load(map.n, makeRequire(relName, true), makeLoad(depName), {});
+                    args[i] = defined[depName];
+                } else {
+                    throw new Error(name + ' missing ' + depName);
+                }
+            }
+
+            ret = callback ? callback.apply(defined[name], args) : undefined;
+
+            if (name) {
+                //If setting exports via "module" is in play,
+                //favor that over return value and exports. After that,
+                //favor a non-undefined return value over exports use.
+                if (cjsModule && cjsModule.exports !== undef &&
+                        cjsModule.exports !== defined[name]) {
+                    defined[name] = cjsModule.exports;
+                } else if (ret !== undef || !usingExports) {
+                    //Use the return value from the function.
+                    defined[name] = ret;
+                }
+            }
+        } else if (name) {
+            //May just be an object definition for the module. Only
+            //worry about defining if have a module name.
+            defined[name] = callback;
+        }
+    };
+
+    requirejs = require = req = function (deps, callback, relName, forceSync, alt) {
+        if (typeof deps === "string") {
+            if (handlers[deps]) {
+                //callback in this case is really relName
+                return handlers[deps](callback);
+            }
+            //Just return the module wanted. In this scenario, the
+            //deps arg is the module name, and second arg (if passed)
+            //is just the relName.
+            //Normalize module name, if it contains . or ..
+            return callDep(makeMap(deps, callback).f);
+        } else if (!deps.splice) {
+            //deps is a config object, not an array.
+            config = deps;
+            if (config.deps) {
+                req(config.deps, config.callback);
+            }
+            if (!callback) {
+                return;
+            }
+
+            if (callback.splice) {
+                //callback is an array, which means it is a dependency list.
+                //Adjust args if there are dependencies
+                deps = callback;
+                callback = relName;
+                relName = null;
+            } else {
+                deps = undef;
+            }
+        }
+
+        //Support require(['a'])
+        callback = callback || function () {};
+
+        //If relName is a function, it is an errback handler,
+        //so remove it.
+        if (typeof relName === 'function') {
+            relName = forceSync;
+            forceSync = alt;
+        }
+
+        //Simulate async callback;
+        if (forceSync) {
+            main(undef, deps, callback, relName);
+        } else {
+            //Using a non-zero value because of concern for what old browsers
+            //do, and latest browsers "upgrade" to 4 if lower value is used:
+            //http://www.whatwg.org/specs/web-apps/current-work/multipage/timers.html#dom-windowtimers-settimeout:
+            //If want a value immediately, use require('id') instead -- something
+            //that works in almond on the global level, but not guaranteed and
+            //unlikely to work in other AMD implementations.
+            setTimeout(function () {
+                main(undef, deps, callback, relName);
+            }, 4);
+        }
+
+        return req;
+    };
+
+    /**
+     * Just drops the config on the floor, but returns req in case
+     * the config return value is used.
+     */
+    req.config = function (cfg) {
+        return req(cfg);
+    };
+
+    /**
+     * Expose module registry for debugging and tooling
+     */
+    requirejs._defined = defined;
+
+    define = function (name, deps, callback) {
+        if (typeof name !== 'string') {
+            throw new Error('See almond README: incorrect module build, no module name');
+        }
+
+        //This module may not have dependencies
+        if (!deps.splice) {
+            //deps is not an array, so probably means
+            //an object literal or factory function for
+            //the value. Adjust args.
+            callback = deps;
+            deps = [];
+        }
+
+        if (!hasProp(defined, name) && !hasProp(waiting, name)) {
+            waiting[name] = [name, deps, callback];
+        }
+    };
+
+    define.amd = {
+        jQuery: true
+    };
+}());
+
+define("../app/bower_components/almond/almond", function(){});
+
+(function() {
+  define('main',[], function() {
+    var initLazyLoad, maxWidth, runSlick, slickBaseSettings;
+    $('.share').on('click', function(ev) {
+      return $(this).parent().toggleClass('active');
+    });
+    maxWidth = 641;
+    slickBaseSettings = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: true,
+      centerMode: true,
+      centerPadding: '160px',
+      arrows: false,
+      responsive: [
+        {
+          breakpoint: maxWidth
+        }
+      ]
+    };
+    runSlick = function() {
+      return $('#sliderBestMaterials').slick(slickBaseSettings);
+    };
+    runSlick();
+    $(window).on('resize', function() {
+      var width;
+      width = $(window).width();
+      if (width < maxWidth) {
+        return runSlick();
+      }
+    });
+    initLazyLoad = function() {
+      var size_li, x;
+      size_li = $('#sliderBestMaterials .slide').size();
+      console.log(size_li);
+      x = 3;
+      $('#sliderBestMaterials .slide:lt(' + x + ')').show();
+      return $('#loadMore').click(function() {
+        x = x + 3 <= size_li ? x + 3 : size_li;
+        $('#sliderBestMaterials .slide:lt(' + x + ')').slideDown(350);
+        if (x === size_li) {
+          return $(this).parent().hide();
+        }
+      });
+    };
+    (function() {
+      var mediumLogo, smallLogo, windowScreen;
+      windowScreen = $(window).width();
+      smallLogo = $('#logo').text("BNM");
+      mediumLogo = $('#logo').text("BestNewsMedia");
+      if (windowScreen <= 640) {
+        smallLogo;
+        return console.log("small");
+      } else {
+        $('#sliderBestMaterials').slick('unslick');
+        mediumLogo;
+        return initLazyLoad();
+      }
+    })();
+    $(window).resize(function() {
+      var mediumLogo, smallLogo, windowScreen;
+      mediumLogo = $('#logo').text("BestNewsMedia");
+      smallLogo = $('#logo').text("BNM");
+      windowScreen = $(window).width();
+      console.log(windowScreen);
+      if (windowScreen <= 640) {
+        $('#logo').text("BNM");
+      }
+      if (windowScreen > 700) {
+        initLazyLoad();
+        $('#logo').text("BestNewsMedia");
+        return console.log("large");
+      }
+    });
+    return (function() {
+      var bodyEl, closeContent, closebtn, content, init, initEvents, isOpen, openbtn, overlay, sidebar, toggleMenu;
+      bodyEl = document.body;
+      content = document.querySelector('.content-wrap');
+      openbtn = document.getElementById('open-button');
+      closebtn = document.getElementById('close-button');
+      closeContent = $('.content');
+      sidebar = $('.cd-nav-trigger');
+      isOpen = false;
+      overlay = $('.content-overlay');
+      init = function() {
+        return initEvents();
+      };
+      initEvents = function() {
+        openbtn.addEventListener('click', toggleMenu);
+        if (closebtn) {
+          closebtn.addEventListener('click', toggleMenu);
+        }
+        return overlay.on('click', function(ev) {
+          var target;
+          target = ev.target;
+          if (isOpen && target !== openbtn) {
+            return toggleMenu();
+          }
+        });
+      };
+      toggleMenu = function() {
+        if (isOpen) {
+          openbtn.className = 'cd-nav-trigger';
+          bodyEl.className = '';
+          overlay.removeClass('active');
+        } else {
+          bodyEl.className += 'show-menu';
+          openbtn.className += ' nav-is-visible';
+          overlay.addClass('active');
+        }
+        return isOpen = !isOpen;
+      };
+      return init();
+    })();
+  });
+
+}).call(this);
+
+require(["main"]);
+}());

@@ -1,5 +1,5 @@
 @import variables
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+
 body, html
   margin: 0
   padding: 0
@@ -31,7 +31,7 @@ body
   max-width: 100%
   overflow-y: auto
   overflow-x: hidden
-  background-color: red//#eeeeee
+  background-color: #eeeeee
 
 p
   font-size: rem-calc(28)
@@ -57,7 +57,9 @@ img
 
 .content-wrapp
   padding: 0 30px
-
+  max-width: 980px
+  margin: 0 auto
+  width: 100%
 .flexBlock
   display: flex
   align-items: center
@@ -66,24 +68,37 @@ img
 .brendText
   font-family: $brendFont
 
-.content
-  max-width: 980px
+.content-overlay
+  position: fixed
+  z-index: 999
+  top: -100px
+  left: 0
+  bottom: 0
+  right: 0
+  height: 125%
   width: 100%
-  margin: 0 auto
-  background-color: #fff
+  background: #000
+  display: none
+  will-change: opacity
+  &.active
+    z-index: 1002
+    display: block
+    opacity: .5
 
 +breakpoint(medium)
+
   p
-   font-size: 18px
-   line-height: 26px
-   padding-top: 10px
+    font-size: 18px
+    line-height: 26px
+    padding-top: 10px
+
   h1
     font-size: 48px
     font-weight: 700
     line-height: 50px
+
   .content-wrapp
     padding: 0
-    max-width: 980px
 
 @import _menu
 @import partials/_header

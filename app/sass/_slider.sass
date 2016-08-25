@@ -100,7 +100,7 @@
   width: 100%
 
 
-+breakpoint
++breakpoint(medium)
   .wrappSlider
     background-color: #eee
     .title
@@ -121,31 +121,35 @@
       display: flex
       flex-wrap: wrap
       margin: 0 auto
-      justify-content: space-between
-    .slide
-      margin-bottom: 20px
-      width: 260px
-      display: none
-    .imgWrapp
-      width: 260px
-      height: 160px
-      border-radius: 0
+      // justify-content: space-between
+      .slide
+        margin-bottom: 20px
+        width: 260px
+        display: none
+        margin-right: 40px
+        &:nth-child(3n)
+          margin-right: 0
+      .imgWrapp
+        width: 260px
+        height: 160px
+        border-radius: 0
 
-    .text
-      opacity: 1
-      text-align: left
-    .titleSlide, .description
-      color: #000
-    .titleSlide
-      font-size: 20px
-      font-weight: 500
-      line-height: 24px
-      margin: 19px 0 17px
-    .description
-      font-size: 14px
-      font-weight: 300
-      line-height: 20px
-      margin-bottom: 0
+      .text
+        opacity: 1
+        text-align: left
+
+      .titleSlide, .description
+        color: #000
+      .titleSlide
+        font-size: 20px
+        font-weight: 500
+        line-height: 24px
+        margin: 19px 0 17px
+      .description
+        font-size: 14px
+        font-weight: 300
+        line-height: 20px
+        margin-bottom: 0
 
     .loadWrapp
       display: flex

@@ -1,13 +1,11 @@
-define ['extra'], (extra)->
-  console.log "Thiss Main and: #{extra}"
-  # s = skrollr.init()
+define [], ->
 
-  # Share
+  # Share#######################################################################
   $('.share').on 'click', (ev) ->
       $(this).parent().toggleClass('active')
 
   maxWidth = 641
-  # Carusel
+  # Carusel#####################################################################
   slickBaseSettings =
 
     slidesToShow: 1,
@@ -30,7 +28,7 @@ define ['extra'], (extra)->
     if width < maxWidth
       runSlick()
 
-  # Lazy Load
+  # Lazy Load###################################################################
   initLazyLoad = ->
     size_li = $('#sliderBestMaterials .slide').size()
     console.log size_li
@@ -38,12 +36,12 @@ define ['extra'], (extra)->
     $('#sliderBestMaterials .slide:lt(' + x + ')').show()
     $('#loadMore').click ->
       x = if x + 3 <= size_li then x + 3 else size_li
-      $('#sliderBestMaterials .slide:lt(' + x + ')').show()
+      $('#sliderBestMaterials .slide:lt(' + x + ')').slideDown(350)
       if x == size_li
         $(this).parent().hide()
 
 
-
+  # Resize######################################################################
   do ->
     windowScreen = $( window ).width()
     smallLogo = $('#logo').text("BNM")
@@ -71,10 +69,7 @@ define ['extra'], (extra)->
       $('#logo').text("BestNewsMedia")
       console.log "large"
 
-
-
-  'use strict'
-  # Menu
+  # Menu########################################################################
   do ->
     bodyEl = document.body
     content = document.querySelector('.content-wrap')
@@ -83,60 +78,33 @@ define ['extra'], (extra)->
     closeContent = $('.content')
     sidebar = $('.cd-nav-trigger')
     isOpen = false
-    morphEl = document.getElementById('morph-shape')
-    s = Snap(morphEl.querySelector('svg'))
-    path = s.select('path')
-    initialPath = path.attr('d')
-    pathOpen = morphEl.getAttribute('data-morph-open')
-    isAnimating = false
+    overlay = $('.content-overlay')
 
     init = ->
       initEvents()
 
-
     initEvents = ->
-      # event.preventDefault()
       openbtn.addEventListener 'click', toggleMenu
-
-        # sidebar.className += ' nav-is-visible'
 
       if closebtn
         closebtn.addEventListener 'click', toggleMenu
 
-
-
-      closeContent.on 'click', (ev) ->
-
+      overlay.on 'click', (ev) ->
         target = ev.target
         if isOpen and target != openbtn
           toggleMenu()
 
     toggleMenu = ->
-
-      if isAnimating
-        return false
-      isAnimating = true
       if isOpen
         openbtn.className = 'cd-nav-trigger'
         bodyEl.className = ''
-        # animate path
-        setTimeout (->
-          # reset path
-          path.attr 'd', initialPath
-          isAnimating = false
-          return
-        ), 300
+        overlay.removeClass('active')
       else
         bodyEl.className += 'show-menu'
         openbtn.className += ' nav-is-visible'
+        overlay.addClass('active')
 
-        # animate path
-
-        path.animate { 'path': pathOpen }, 400, mina.easeinout, ->
-          isAnimating = false
-          return
       isOpen = !isOpen
 
 
     init()
-
