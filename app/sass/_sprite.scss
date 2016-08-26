@@ -1,0 +1,163 @@
+.icon {
+    font-size: rem-calc(30);
+    &:before {
+      content:' ';
+      vertical-align:middle;
+      display: inline-block;
+      background-image: url("../images/icons/svg/sprite.svg");
+      background-repeat: no-repeat;
+      background-size: 1.8666666666666667em 16.233333333333334em;
+
+      .no-svg & {
+        background-image: url("../images/icons/svg/sprite.png");
+      }
+    }
+}
+
+
+
+
+.icon.icon {
+  &:before {
+      background-position: -0.16666666666666666em -0.16666666666666666em;
+      width: 1.3333333333333333em;
+      height: 1.5333333333333334em;
+    }
+  }
+
+  @mixin icon-icon(){
+    @extend .icon;
+  }
+
+
+.icon.icon-comments {
+  &:before {
+      background-position: -0.16666666666666666em -2.033333333333333em;
+      width: 1em;
+      height: 0.9em;
+    }
+  }
+
+  @mixin icon-icon-comments(){
+    @extend .icon-comments;
+  }
+
+
+.icon.icon-fb {
+  &:before {
+      background-position: -0.16666666666666666em -3.2666666666666666em;
+      width: 1.3em;
+      height: 1.3em;
+    }
+  }
+
+  @mixin icon-icon-fb(){
+    @extend .icon-fb;
+  }
+
+
+.icon.icon-gp {
+  &:before {
+      background-position: -0.16666666666666666em -4.9em;
+      width: 1.4em;
+      height: 1.3333333333333333em;
+    }
+  }
+
+  @mixin icon-icon-gp(){
+    @extend .icon-gp;
+  }
+
+
+.icon.icon-ok {
+  &:before {
+      background-position: -0.16666666666666666em -6.566666666666667em;
+      width: 0.9333333333333333em;
+      height: 1.5333333333333334em;
+    }
+  }
+
+  @mixin icon-icon-ok(){
+    @extend .icon-ok;
+  }
+
+
+.icon.icon-picture {
+  &:before {
+      background-position: -0.16666666666666666em -8.433333333333334em;
+      width: 1.2333333333333334em;
+      height: 1.1666666666666667em;
+    }
+  }
+
+  @mixin icon-icon-picture(){
+    @extend .icon-picture;
+  }
+
+
+.icon.icon-reply {
+  &:before {
+      background-position: -0.16666666666666666em -9.933333333333334em;
+      width: 0.8em;
+      height: 0.6333333333333333em;
+    }
+  }
+
+  @mixin icon-icon-reply(){
+    @extend .icon-reply;
+  }
+
+
+.icon.icon-tw {
+  &:before {
+      background-position: -0.16666666666666666em -10.899999999999999em;
+      width: 1.5333333333333334em;
+      height: 1.2666666666666666em;
+    }
+  }
+
+  @mixin icon-icon-tw(){
+    @extend .icon-tw;
+  }
+
+
+.icon.icon-video {
+  &:before {
+      background-position: -0.16666666666666666em -12.5em;
+      width: 1.2333333333333334em;
+      height: 0.9em;
+    }
+  }
+
+  @mixin icon-icon-video(){
+    @extend .icon-video;
+  }
+
+
+.icon.icon-view {
+  &:before {
+      background-position: -0.16666666666666666em -13.733333333333333em;
+      width: 0.9666666666666667em;
+      height: 0.5666666666666667em;
+    }
+  }
+
+  @mixin icon-icon-view(){
+    @extend .icon-view;
+  }
+
+
+.icon.icon-vk {
+  &:before {
+      background-position: -0.16666666666666666em -14.633333333333333em;
+      width: 1.4666666666666666em;
+      height: 1.4333333333333333em;
+    }
+  }
+
+  @mixin icon-icon-vk(){
+    @extend .icon-vk;
+  }
+
+
+

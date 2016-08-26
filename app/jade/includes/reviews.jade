@@ -27,9 +27,7 @@ mixin reviews
             a.reply Ответить
         .reviewContent
           .poclog
-            i.icon-bnp
-              svg(viewBox="0 0 24 18" width="46" height="37")
-                use(xlink:href="images/icons/sprite.svg#icon-reply")
+            .icon.icon-reply
             span poclog
           .headReview.flexBlock
             .userInfo.flexBlock
@@ -65,11 +63,7 @@ mixin reviews
       .flexBlock
         button Отправить
         .uploadButton
-          i.icon-bnp
-            svg(viewBox="0 0 36 35" width="46" height="37")
-              use(xlink:href="/images/icons/sprite.svg#icon-picture")
+          .icon.icon-picture
           input#upload_button(type="file" multiple="" name="file1")
         .uploadVideo
-          i.icon-bnp
-            svg(viewBox="0 0 35 25" width="46" height="37")
-              use(xlink:href="/images/icons/sprite.svg#icon-video")
+          .icon.icon-video

@@ -6,15 +6,18 @@
     "Serokruluy"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/AntonBudagov/UBN",
   "ignore": [
     "**/.*",
     "node_modules",
+    "bower_components",
     "app/bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "almond": "^0.3.2"
+    "almond": "^0.3.2",
+    "jquery": "^2.2.4",
+    "slick-carousel": "^1.6.0"
   }
 }

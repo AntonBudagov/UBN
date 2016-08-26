@@ -30,7 +30,7 @@
       transform: translate3d(0, 3000px, 0)
 
   #search
-    height: 101px
+    height: rem-calc(101)
     width: 100%
     border: none
     font-size: rem-calc(40)
@@ -110,26 +110,26 @@
   float: left
   position: relative
   display: block
-  width: 40px
-  height: 28px
+  width: rem-calc(40)
+  height: rem-calc(28)
   overflow: hidden
   white-space: nowrap
   color: transparent
   span
     position: absolute
     display: inline-block
-    height: 4px
+    height: rem-calc(4)
     width: 100%
     background: #000
     position: absolute
     top: 50%
     right: 0px
     transition: background 0.2s
-    margin-top: -2px
+    margin-top: rem-calc(-2)
     &::before
-      top: -11px
+      top: rem-calc(-11)
     &::after
-      top: 11px
+      top: rem-calc(11)
     &::before, &::after
       content: ''
       right: 0
@@ -140,13 +140,13 @@
       transition: transform 0.2s
       position: absolute
       display: inline-block
-      height: 4px
+      height: rem-calc(4)
       width: 100%
       background: #000
 
   &.nav-is-visible
-    width: 31px
-    height: 31px
+    width: rem-calc(31)
+    height: rem-calc(31)
     span
       background: transparent
       &::before

@@ -440,7 +440,7 @@ define("../app/bower_components/almond/almond", function(){});
       slidesToScroll: 1,
       dots: true,
       centerMode: true,
-      centerPadding: '160px',
+      centerPadding: '10rem',
       arrows: false,
       responsive: [
         {
@@ -478,10 +478,12 @@ define("../app/bower_components/almond/almond", function(){});
       windowScreen = $(window).width();
       smallLogo = $('#logo').text("BNM");
       mediumLogo = $('#logo').text("BestNewsMedia");
-      if (windowScreen <= 640) {
-        smallLogo;
+      if (windowScreen <= 641) {
+        $('#logo').text("BNM");
         return console.log("small");
       } else {
+        console.log("large");
+        $('#logo').text("BestNewsMedia");
         $('#sliderBestMaterials').slick('unslick');
         mediumLogo;
         return initLazyLoad();
@@ -493,8 +495,9 @@ define("../app/bower_components/almond/almond", function(){});
       smallLogo = $('#logo').text("BNM");
       windowScreen = $(window).width();
       console.log(windowScreen);
-      if (windowScreen <= 640) {
+      if (windowScreen <= 641) {
         $('#logo').text("BNM");
+        console.log("small");
       }
       if (windowScreen > 700) {
         initLazyLoad();

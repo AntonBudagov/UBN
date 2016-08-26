@@ -20,7 +20,7 @@
         display: flex
         align-items: center
       span
-        margin-right: 14px
+        margin-right: rem-calc(14)
 
   .userInfo
     font-size: rem-calc(24)
@@ -28,36 +28,30 @@
     line-height: rem-calc(24)
     margin-right: rem-calc(24)
 
-  .icon-bnp
-    display: inline-block
-    margin: 0 14px
-
 #share
   position: absolute
   right: rem-calc(24)
-  +breakpoint(medium)
-    display: none
+  // +breakpoint(medium)
+  //   display: none
 
 .socialButton
-  margin-top: 37px
+  margin-top: rem-calc(37)
   .social
     position: relative
     display: none
     color: white
-    font-size: 14px
+    font-size: rem-calc(14)
     font-weight: 500
-    line-height: 24px
+    line-height: rem-calc(24)
     right: 0
     a
       display: flex
       color: #fff
       text-decoration: none
       align-items: center
-      padding: 0 12px 0 11px
-      height: 33px
-    svg
-      width: 14px
-      height: auto
+      padding: rem-calc(0 12px 0 11px)
+      height: rem-calc(33)
+
     .followers
       opacity: .8
 
@@ -70,7 +64,6 @@
       align-items: flex-end
       height: 550px
     .decription
-      // padding-left: 140px
       width: 585px
       padding: 0 0 0 140px
       .info
@@ -82,18 +75,16 @@
     .userComment
       display: flex
       align-items: center
-      .icon-bnp
-        margin: 0 6px 0 0
-      svg
-        width: 17px
-        height: 9px
-        opacity: .7
+      .icon
+        font-size: 17px
+        margin-right: 6px
+      .icon-view
+        &:before
+          background-position: -0.16666666666666666em -13.533333333333333em
+
       span
         font-size: 14px
-    .userComment
-      svg
-        width: 17px
-        height: 15px
+
   .afterPhotoWrapp
     background-color: #fff
     padding: 46px 219px 0 140px
@@ -104,14 +95,21 @@
         background-color: #00b7ec
         span
           padding: 0 14px 0 8px
+        .icon
+          font-size: 9.79px
       &:nth-child(2)
         background-color: #425497
         span
           padding: 0 13px 0 9px
+        .icon
+          font-size: 10px
       &:nth-child(3)
         background-color: #526e8f
         span
           padding: 0 11px 0 9px
+        .icon
+          font-size: 9.79px
+
 
 
 

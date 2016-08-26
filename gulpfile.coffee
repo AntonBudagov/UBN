@@ -11,6 +11,9 @@ wiredep = require('wiredep').stream
 useref = require('gulp-useref')
 gulpif = require('gulp-if')
 notify = require('gulp-notify')
+svgSprite = require("gulp-svg-sprites")
+mainBowerFiles = require('gulp-main-bower-files')
+gulpFilter = require('gulp-filter')
 browserSync = require('browser-sync').create()
 
 # SERVER #############################################
@@ -36,6 +39,40 @@ gulp.task 'sass',  ->
     #.pipe concatCss("sass/bundle.css")
     .pipe autoprefixer('last 2 version', '> 1%', 'IE 9' )
     .pipe gulp.dest 'dist/css'
+
+
+# SVG #############################################
+gulp.task 'sprites', ->
+  options = {
+    #mode: "defs"
+    baseSize: 30
+    padding: 5
+    #selector: "icon-%f"
+    preview: false
+    templates: { scss: true }
+    cssFile: "../../../app/sass/_sprite.scss"
+  }
+  gulp.src('app/svg/*.svg')
+    .pipe(svgSprite(options))
+    .pipe gulp.dest('dist/images/icons')
+
+##############################
+
+
+gulp.task 'main-bower-files', ->
+  filterJS = gulpFilter('*.js', { restore: true })
+  gulp.src('./bower.json').pipe(mainBowerFiles(
+    overrides:
+      almond:
+        "ignore": true
+      jquery:
+        main: ["./dist/jquery.min.js"]
+      "slick-carousel":
+        main: ["./**/slick.min.js", "./**/fonts/*.*", "./**/*.css", "./**/*.gif"]
+    ))
+    # .pipe(filterJS)
+    # .pipe(filterJS.restore)
+    .pipe gulp.dest('dist/lib')
 
 # BUILD #############################################
 gulp.task 'build', ['coffee'], ->

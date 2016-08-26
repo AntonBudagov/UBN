@@ -12,7 +12,7 @@ define [], ->
     slidesToScroll: 1,
     dots: true,
     centerMode: true
-    centerPadding: '160px'
+    centerPadding: '10rem'
     arrows: false
     responsive: [ {
       breakpoint: maxWidth
@@ -46,11 +46,13 @@ define [], ->
     windowScreen = $( window ).width()
     smallLogo = $('#logo').text("BNM")
     mediumLogo = $('#logo').text("BestNewsMedia")
-    if windowScreen <= 640
-      smallLogo
+    if windowScreen <= 641
+      $('#logo').text("BNM")
       console.log "small"
       # initCarusel()
     else
+      console.log "large"
+      $('#logo').text("BestNewsMedia")
       $('#sliderBestMaterials').slick('unslick')
       mediumLogo
       initLazyLoad()
@@ -60,9 +62,9 @@ define [], ->
     smallLogo = $('#logo').text("BNM")
     windowScreen = $( window ).width()
     console.log windowScreen
-    if windowScreen <= 640
+    if windowScreen <= 641
       $('#logo').text("BNM")
-      # initCarusel()
+      console.log "small"
 
     if windowScreen > 700
       initLazyLoad()

@@ -24,7 +24,7 @@
     img
       max-width: 100%
 #logo, .logo
-  margin-left: 31px
+  margin-left: rem-calc(31)
   color: #000
   text-decoration: none
   font-family: Roboto;
@@ -35,14 +35,14 @@
 .user
   position: relative
   .status
-    width: 24px
-    height: 24px
+    width: rem-calc(24)
+    height: rem-calc(24)
     border-radius: 50%
     position: absolute
     background-color: grey
-    top: 12px
-    left: 34px
-    border: 2px solid white
+    top: rem-calc(12)
+    left: rem-calc(34)
+    border: 0.125rem solid white
     &.active
       background-color: red
   .name
